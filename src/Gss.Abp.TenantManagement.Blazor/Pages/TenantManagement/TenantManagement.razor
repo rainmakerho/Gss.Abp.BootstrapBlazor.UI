@@ -1,0 +1,11 @@
+@page "/tenant-management/tenants"
+@attribute [Authorize(TenantManagementPermissions.Tenants.Default)]
+@using Microsoft.AspNetCore.Authorization
+@using Gss.Abp.FeatureManagement.Blazor.Components
+@using Microsoft.AspNetCore.Components.Forms
+@using Volo.Abp.TenantManagement
+@using Volo.Abp.TenantManagement.Localization
+@using Gss.Abp.AspNetCore.Components.Web.Theming.Layout
+@using Volo.Abp.AspNetCore.Components.Web
+@inject AbpBlazorMessageLocalizerHelper<AbpTenantManagementResource> LH
+@inherits AbpCrudPageBase<ITenantAppService, TenantDto, TenantDto, Guid, GetTenantsInput, TenantCreateDto, TenantUpdateDto, TenantDto, TenantCreateDto, TenantUpdateDto>

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<Import Project="..\..\configureawait.props" />
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.FeatureManagement.Application.Contracts" Version="$(ABPPackageVersion)" />
+		<PackageReference Include="Volo.Abp.Features" Version="$(ABPPackageVersion)" />
+	</ItemGroup>	
+
+	<ItemGroup>
+		<ProjectReference Include="..\Gss.Abp.AspNetCore.Components.Web.Theming\Gss.Abp.AspNetCore.Components.Web.Theming.csproj" />
+		<ProjectReference Include="..\Gss.Abp.SettingManagement.Blazor\Gss.Abp.SettingManagement.Blazor.csproj" />
+	</ItemGroup>
+
+</Project>

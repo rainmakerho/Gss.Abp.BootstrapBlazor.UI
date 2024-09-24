@@ -1,0 +1,12 @@
+@page "/identity/roles"
+@attribute [Authorize(IdentityPermissions.Roles.Default)]
+@using Volo.Abp.Identity
+@using Microsoft.AspNetCore.Authorization
+@using Gss.Abp.PermissionManagement.Blazor.Components
+@using Volo.Abp.Identity.Localization
+@using Volo.Abp.AspNetCore.Components.Web
+@using Gss.Abp.AspNetCore.Components.Web.Theming
+@* @using Gss.Abp.BootstrapUI.Components.ObjectExtending *@
+@using Gss.Abp.AspNetCore.Components.Web.Theming.Layout
+@inject AbpBlazorMessageLocalizerHelper<IdentityResource> LH
+@inherits AbpCrudPageBase<IIdentityRoleAppService, IdentityRoleDto, Guid, GetIdentityRolesInput, IdentityRoleCreateDto, IdentityRoleUpdateDto>

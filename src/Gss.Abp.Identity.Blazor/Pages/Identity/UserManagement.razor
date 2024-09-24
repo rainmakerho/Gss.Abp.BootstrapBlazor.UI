@@ -1,0 +1,11 @@
+@page "/identity/users"
+@attribute [Authorize(IdentityPermissions.Users.Default)]
+@using Microsoft.AspNetCore.Authorization
+@using Volo.Abp.Identity
+@using Gss.Abp.PermissionManagement.Blazor.Components
+@* @using Gss.Abp.BootstrapUI.Components.ObjectExtending *@
+@using Volo.Abp.Identity.Localization
+@using Gss.Abp.AspNetCore.Components.Web.Theming.Layout
+@inject AbpBlazorMessageLocalizerHelper<IdentityResource> LH
+
+@inherits AbpCrudPageBase<IIdentityUserAppService, IdentityUserDto, Guid, GetIdentityUsersInput, IdentityUserCreateDto, IdentityUserUpdateDto>

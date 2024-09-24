@@ -1,0 +1,11 @@
+@using Volo.Abp.Validation.StringValues
+@using Microsoft.Extensions.Localization
+@inherits AbpFeatureManagementComponentBase
+
+<Modal @ref="Modal">
+    <ModalDialog Title="@L["New"]" Size="Size.Large" ShowFooter="false">
+        <BodyTemplate>
+            <span class="m-3">@L["NoFeatureFoundMessage"]</span>
+        </BodyTemplate>
+    </ModalDialog>
+</Modal>

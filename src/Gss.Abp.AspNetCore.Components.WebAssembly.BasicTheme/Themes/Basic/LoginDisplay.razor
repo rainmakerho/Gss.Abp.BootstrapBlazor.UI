@@ -1,0 +1,30 @@
+@using Localization.Resources.AbpUi
+@using Microsoft.Extensions.Localization
+@using Microsoft.Extensions.Options
+@using Volo.Abp.AspNetCore.Components
+@using Volo.Abp.AspNetCore.Components.Web
+@inherits AbpComponentBase
+@inject IJSRuntime JsRuntime
+@inject NavigationManager Navigation
+@inject IStringLocalizer<AbpUiResource> UiLocalizer
+@inject IOptions<AuthenticationOptions> AuthenticationOptions
+@inject IOptions<AbpAspNetCoreComponentsWebOptions> AbpAspNetCoreComponentsWebOptions
+
+<AuthorizeView>
+    <Authorized>
+        <Logout DisplayName="@($"{CurrentTenant.Name}\\{CurrentUser.UserName}")" UserName="@CurrentUser.UserName" class="bg-primary">
+            <LinkTemplate>
+                <a href="#">
+                    <i class="fa-solid fa-user"></i><span>Info</span>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-gear"></i><span>Setting</span>
+                </a>
+                <LogoutLink Url="/logouts" />
+            </LinkTemplate>
+        </Logout>
+    </Authorized>
+    <NotAuthorized>
+        <a class="nav-link" href="@AuthenticationOptions.Value.LoginUrl">@UiLocalizer["Login"]</a>
+    </NotAuthorized>
+</AuthorizeView>

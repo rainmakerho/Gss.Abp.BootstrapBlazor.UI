@@ -1,0 +1,47 @@
+﻿@using BootstrapBlazor.Components
+@using Gss.Abp.AspNetCore.Components.Web.Theming.Routing
+@using Microsoft.Extensions.Localization
+@using Microsoft.Extensions.Options
+@inherits LayoutComponentBase
+@inject IOptions<AbpRouterOptions> RouterOptions
+
+<BootstrapBlazorRoot>
+    <Layout SideWidth="0" IsPage="true" ShowGotoTop="true" ShowCollapseBar="true"
+            TabDefaultUrl="/"
+            Menus="@Menus" UseTabSet="true">
+        <Header>
+            <span class="ms-3 flex-sm-fill d-none d-sm-block">Welcome</span>
+            <div class="flex-fill d-sm-none">
+            </div>
+        </Header>
+        <Side>
+            <div class="layout-banner">
+                <img class="layout-logo" src="favicon.png" />
+                <div class="layout-title">
+                    <span>manage</span>
+                </div>
+            </div>
+        </Side>
+        <Main>
+            <CascadingValue Value="this" IsFixed="true">
+                @Body
+            </CascadingValue>
+        </Main>
+        <Footer>
+            <div class="text-center flex-fill">
+                <a class="page-layout-demo-footer-link" href="https://gitee.com/LongbowEnterprise/BootstrapAdmin" target="_blank">Bootstrap Admin</a>
+            </div>
+        </Footer>
+        <NotFound>
+            <p>Sorry, there's nothing at this address.</p>
+        </NotFound>
+    </Layout>
+
+
+</BootstrapBlazorRoot>
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>

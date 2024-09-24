@@ -1,0 +1,11 @@
+﻿﻿<Button ButtonType="@Type" Color="@Color" IsBlock="@Block" 
+    IsDisabled="@IsDisabled" OnClick="@OnClickedHandler">
+    @if (ChildContent != null)
+    {
+        @ChildContent
+    }
+    else
+    {
+        @SaveString
+    }
+</Button>

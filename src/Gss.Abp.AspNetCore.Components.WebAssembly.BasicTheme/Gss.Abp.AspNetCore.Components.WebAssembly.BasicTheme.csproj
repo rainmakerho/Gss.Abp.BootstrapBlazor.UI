@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<Import Project="..\..\configureawait.props" />
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Gss.Abp.AspNetCore.Components.Web.BasicTheme\Gss.Abp.AspNetCore.Components.Web.BasicTheme.csproj" />
+		<ProjectReference Include="..\Gss.Abp.AspNetCore.Components.WebAssembly.Theming\Gss.Abp.AspNetCore.Components.WebAssembly.Theming.csproj" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.AspNetCore.Components" Version="$(ABPPackageVersion)" />
+		<PackageReference Include="Volo.Abp.Http.Client.IdentityModel.WebAssembly" Version="$(ABPPackageVersion)" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <Folder Include="Pages\" />
+	</ItemGroup>
+
+</Project>

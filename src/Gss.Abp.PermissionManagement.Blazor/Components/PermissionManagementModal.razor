@@ -1,0 +1,10 @@
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.PermissionManagement.Localization
+@inherits Volo.Abp.AspNetCore.Components.AbpComponentBase
+
+<Modal @ref="_modal">
+    <ModalDialog Title="@($"{L["Permissions"]} - {_entityDisplayName}")" Size="Size.Large" ShowFooter="false">
+        <BodyTemplate>
+        </BodyTemplate>
+    </ModalDialog>
+</Modal>

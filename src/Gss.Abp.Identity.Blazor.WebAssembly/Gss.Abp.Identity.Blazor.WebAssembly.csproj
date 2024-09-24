@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<Import Project="..\..\configureawait.props" />
+	<Import Project="..\..\common.props" />
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Identity.HttpApi.Client" Version="$(ABPPackageVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Gss.Abp.Identity.Blazor\Gss.Abp.Identity.Blazor.csproj" />
+	  <ProjectReference Include="..\Gss.Abp.PermissionManagement.Blazor.WebAssembly\Gss.Abp.PermissionManagement.Blazor.WebAssembly.csproj" />
+	</ItemGroup>
+
+</Project>

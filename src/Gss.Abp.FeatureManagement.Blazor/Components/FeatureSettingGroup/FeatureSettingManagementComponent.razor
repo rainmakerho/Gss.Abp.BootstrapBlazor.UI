@@ -1,0 +1,13 @@
+@inherits Volo.Abp.AspNetCore.Components.AbpComponentBase
+
+@if (Settings != null && Settings.HasManageHostFeaturesPermission)
+{
+    <div class="row g-3">
+        <div>@L["ManageHostFeaturesText"]</div>
+        <Button Size="Size.Small" Color="Color.Primary" OnClick="@OnManageHostFeaturesClicked">
+            <div><i class="fa fa-cog" aria-hidden="true"></i>@L["ManageHostFeatures"]</div>
+        </Button>
+    </div>
+    
+    <FeatureManagementModal @ref="FeatureManagementModal"/>
+}

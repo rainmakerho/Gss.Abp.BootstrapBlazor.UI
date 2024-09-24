@@ -1,0 +1,33 @@
+@page "/setting-management"
+@using Microsoft.AspNetCore.Authorization
+@using Gss.Abp.AspNetCore.Components.Web.Theming.Layout
+@using Volo.Abp.Features
+@using Volo.Abp.SettingManagement
+@attribute [Authorize]
+@attribute [RequiresFeature(SettingManagementFeatures.Enable)]
+
+<PageHeader Title="@L["Settings"]" BreadcrumbItems="@BreadcrumbItems">
+
+</PageHeader>
+
+<Card>
+    <BodyTemplate>
+       <Tab>
+            @foreach (var group in SettingComponentCreationContext.Groups)
+            {
+               
+                <TabItem Text="@group.DisplayName">
+                    @{
+                        SettingItemRenders.Add(builder =>
+                        {
+                            builder.OpenComponent(0, group.ComponentType);
+                            builder.CloseComponent();
+                        });
+                    }
+
+                    @SettingItemRenders.Last()
+                </TabItem>
+            }
+        </Tab>
+    </BodyTemplate>
+</Card>

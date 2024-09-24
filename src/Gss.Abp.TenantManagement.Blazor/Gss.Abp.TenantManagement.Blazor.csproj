@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<Import Project="..\..\configureawait.props" />
+	<Import Project="..\..\common.props" />
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.AutoMapper" Version="$(ABPPackageVersion)" />
+		<PackageReference Include="Volo.Abp.TenantManagement.Application.Contracts" Version="$(ABPPackageVersion)" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Gss.Abp.FeatureManagement.Blazor\Gss.Abp.FeatureManagement.Blazor.csproj" />
+	</ItemGroup>
+
+</Project>
